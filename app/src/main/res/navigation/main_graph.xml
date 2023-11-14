@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_restaurantMenu"
+            app:destination="@id/restaurantMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.updateprofile.UpdateProfileFragment"
+        android:label="Update Profile"
+        tools:layout="@layout/fragment_update_profile" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.settings.SettingsFragment"
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.restaurant.RestaurantFragment"
+        android:label="Restaurant"
+        tools:layout="@layout/fragment_restaurant" >
+        <action
+            android:id="@+id/action_restaurantFragment_to_editRestaurantBottomSheetFragment"
+            app:destination="@id/editRestaurantBottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.myorders.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/restaurantMenu"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.restaurant.RestaurantMenuFragment"
+        android:label="fragment_restaurant_menu"
+        tools:layout="@layout/fragment_restaurant_menu" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_restaurantMenu_to_addRestaurantMenuItemFragment"
+            app:destination="@id/addRestaurantMenuItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRestaurantMenuItemFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.restaurant.AddRestaurantMenuItemFragment"
+        android:label="fragment_add_menu_item"
+        tools:layout="@layout/fragment_add_menu_item" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/editRestaurantBottomSheetFragment"
+        android:name="com.teamd.hungerexpressfooddelivery.ui.restaurant.EditRestaurantBottomSheetFragment"
+        android:label="fragment_edit_restaurant_bottom_sheet"
+        tools:layout="@layout/fragment_edit_restaurant_bottom_sheet" />
+</navigation>

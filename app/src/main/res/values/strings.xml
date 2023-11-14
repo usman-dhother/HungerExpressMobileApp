@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Hunger Express Food Delivery</string>
+    <string name="check_your_internet_connection">⚠️\nCheck Your Internet Connection</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_your_password">Confirm Your Password</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="email">Email</string>
+    <string name="enter_your_valid_email">Enter Your Valid Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="forget_your_password">Forget\nYour Password?</string>
+    <string name="forget_msg">Enter your email to receive a password reset link.</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="forget_pwd">Forget Password?</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enable_app_notifications">Enable App Notifications</string>
+    <string name="enable_location_access">Enable Location Access</string>
+    <string name="not_allow_app_notification">Not Allow App Notification</string>
+    <string name="allow_app_notification">Allow App Notification</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="enter_complete_address">Enter Complete Address</string>
+    <string name="address">Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_your_phone_number">Enter Your Phone Number</string>
+    <string name="update">Update</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="restaurant_name">Name</string>
+    <string name="restaurant_desc">Description</string>
+    <string name="restaurant_addr">Address</string>
+    <string name="restaurant_num">Phone Number</string>
+    <string name="save">Save</string>
+    <string name="add_menu_item">Add Menu Item</string>
+    <string name="restaurant_id">Restaurant ID</string>
+    <string name="description">Description</string>
+    <string name="no_file_choose">No File Choose</string>
+</resources>

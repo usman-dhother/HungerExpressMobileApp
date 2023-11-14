@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.restaurant.EditRestaurantBottomSheetFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="25dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp">
+
+        <ImageView
+            android:id="@+id/clostIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:gravity="start"
+            android:text="Edit Restaurant"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toStartOf="@+id/clostIv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/clostIv" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/restaurantNameTIL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/light_blue"
+            app:errorTextColor="@color/error"
+            app:hintTextColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="@+id/clostIv"
+            app:layout_constraintStart_toStartOf="@+id/titleTv"
+            app:layout_constraintTop_toBottomOf="@+id/titleTv"
+            app:placeholderText="@string/restaurant_name"
+            app:startIconTint="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantNameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/restaurant_name"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/restaurantDescTIL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:boxStrokeColor="@color/light_blue"
+            app:errorTextColor="@color/error"
+            app:hintTextColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="@+id/restaurantNameTIL"
+            app:layout_constraintStart_toStartOf="@+id/restaurantNameTIL"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantNameTIL"
+            app:placeholderText="@string/restaurant_desc"
+            app:startIconTint="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantDescEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/restaurant_desc"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/restaurantAddressTIL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:boxStrokeColor="@color/light_blue"
+            app:errorTextColor="@color/error"
+            app:hintTextColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="@+id/restaurantDescTIL"
+            app:layout_constraintStart_toStartOf="@+id/restaurantDescTIL"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantDescTIL"
+            app:placeholderText="@string/restaurant_addr"
+            app:startIconTint="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantAddressEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/restaurant_addr"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/restaurantNumberTIL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:boxStrokeColor="@color/light_blue"
+            app:errorTextColor="@color/error"
+            app:hintTextColor="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="@+id/restaurantAddressTIL"
+            app:layout_constraintStart_toStartOf="@+id/restaurantAddressTIL"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantAddressTIL"
+            app:placeholderText="@string/restaurant_num"
+            app:startIconTint="@color/dark_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantNumberEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/restaurant_num"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/restaurantNumberTIL"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantNumberTIL" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

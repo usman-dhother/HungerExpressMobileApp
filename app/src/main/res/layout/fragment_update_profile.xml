@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9903A9F4"
+    tools:context=".ui.updateprofile.UpdateProfileFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bannerimage4" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:letterSpacing=".2"
+                android:text="@string/update_profile"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/light_blue"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstNameTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:boxStrokeColor="@color/light_blue"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="@+id/tv"
+                app:layout_constraintStart_toStartOf="@+id/tv"
+                app:layout_constraintTop_toBottomOf="@+id/tv"
+                app:placeholderText="@string/enter_first_name"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/dark_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstNameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:boxStrokeColor="@color/light_blue"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="@+id/firstNameTIL"
+                app:layout_constraintStart_toStartOf="@+id/firstNameTIL"
+                app:layout_constraintTop_toBottomOf="@+id/firstNameTIL"
+                app:placeholderText="@string/enter_last_name"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/dark_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastNameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:boxStrokeColor="@color/light_blue"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="@+id/lastNameTIL"
+                app:layout_constraintStart_toStartOf="@+id/lastNameTIL"
+                app:layout_constraintTop_toBottomOf="@+id/lastNameTIL"
+                app:placeholderText="@string/enter_complete_address"
+                app:startIconDrawable="@drawable/ic_edit_location"
+                app:startIconTint="@color/dark_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:boxStrokeColor="@color/light_blue"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="@+id/addressTIL"
+                app:layout_constraintStart_toStartOf="@+id/addressTIL"
+                app:layout_constraintTop_toBottomOf="@+id/addressTIL"
+                app:placeholderText="@string/enter_your_valid_email"
+                app:startIconDrawable="@drawable/ic_mail"
+                app:startIconTint="@color/dark_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/light_blue"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="@+id/emailTIL"
+                app:layout_constraintStart_toStartOf="@+id/emailTIL"
+                app:layout_constraintTop_toBottomOf="@+id/emailTIL"
+                app:placeholderText="@string/enter_your_phone_number"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@color/dark_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_number"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_blue" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:letterSpacing=".3"
+                android:text="@string/update"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="@+id/passwordTIL"
+                app:layout_constraintStart_toStartOf="@+id/passwordTIL"
+                app:layout_constraintTop_toBottomOf="@+id/passwordTIL" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/changePwdBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:text="Change Password"
+                android:textColor="@color/dark_pink"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/updateBtn"
+                app:layout_constraintStart_toStartOf="@+id/updateBtn"
+                app:layout_constraintTop_toBottomOf="@+id/updateBtn"
+                app:strokeColor="@color/light_pink"
+                app:strokeWidth="1dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
