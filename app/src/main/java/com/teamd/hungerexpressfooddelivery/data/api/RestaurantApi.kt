@@ -4,6 +4,7 @@ import com.teamd.hungerexpressfooddelivery.data.model.AddMenuItemRestaurantReque
 import com.teamd.hungerexpressfooddelivery.data.model.MenuItemRestaurantResponse
 import com.teamd.hungerexpressfooddelivery.data.model.RestaurantListRequestItem
 import com.teamd.hungerexpressfooddelivery.data.model.UpdateRestaurant
+import com.teamd.hungerexpressfooddelivery.ui.myorders.Order
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -25,6 +26,9 @@ interface RestaurantApi {
 
     @GET("/api/menuItems/restaurant/{id}")
     suspend fun menuRestaurantById(@Path("id") id: String): Response<List<MenuItemRestaurantResponse>>
+
+    @GET("/api/orders/{id}")
+    suspend fun orderHistory(@Path("orderId") id: String): Response<List<Order>>
 
     @POST("/api/menuItems/create")
     suspend fun postMenuRestaurant(@Body addMenuItemRestaurantRequest: AddMenuItemRestaurantRequest): Response<MenuItemRestaurantResponse>

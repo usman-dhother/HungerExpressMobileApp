@@ -5,49 +5,31 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-
     <TextView
-        android:id="@+id/tvOrderStatus"
+        android:id="@+id/tvOrderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order Status: Placed"
+        android:text="Order ID"
         android:textAppearance="?attr/textAppearanceListItem" />
 
     <TextView
-        android:id="@+id/tvDeliveryAddress"
+        android:id="@+id/tvItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delivery Address: Test, Pitta Reddy, 35 Tes, test, Poughkeepsie, 89898, Tenesse"
+        android:text="Item Name"
         android:textAppearance="?attr/textAppearanceListItem" />
 
     <TextView
-        android:id="@+id/tvTotalPrice"
+        android:id="@+id/tvQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Price: $6.99"
-        android:textAppearance="?attr/textAppearanceListItem" />
-
-    <!-- You can add a RecyclerView here if you want to show a list of order items within each order item view -->
-    <!-- For simplicity, I'm just adding a TextView placeholder -->
-    <TextView
-        android:id="@+id/tvOrderItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order Items: [List of items]"
+        android:text="Quantity"
         android:textAppearance="?attr/textAppearanceListItem" />
 
     <TextView
-        android:id="@+id/tvOrderDate"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order Date: 2023-11-07T15:00:15.190+00:00"
+        android:text="Price"
         android:textAppearance="?attr/textAppearanceListItem" />
-
-    <TextView
-        android:id="@+id/tvDriver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Driver: TT1199"
-        android:textAppearance="?attr/textAppearanceListItem" />
-
 </LinearLayout>

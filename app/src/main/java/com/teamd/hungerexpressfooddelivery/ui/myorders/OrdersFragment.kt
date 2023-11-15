@@ -12,40 +12,35 @@ import com.teamd.hungerexpressfooddelivery.R
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.teamd.hungerexpressfooddelivery.databinding.FragmentOrdersBinding
 import com.teamd.hungerexpressfooddelivery.ui.myorders.OrderAdapter
 
-class OrdersFragment : Fragment(), OrderAdapter.OnOrderClickListener {
+class OrdersFragment : Fragment() {
 
-    private lateinit var binding: FragmentOrdersBinding
     private lateinit var orderAdapter: OrderAdapter
+    private lateinit var recyclerView: RecyclerView
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentOrdersBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        orderAdapter = OrderAdapter(this)
-        binding.recyclerViewOrders.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewOrders.adapter = orderAdapter
+//    // Initialize the adapter with dummy data
+//    orderAdapter = OrderAdapter(dummyOrders)
+//    binding.recyclerViewOrders.layoutManager = LinearLayoutManager(requireContext())
+//    binding.recyclerViewOrders.adapter = orderAdapter
 
-        // Assuming you have a ViewModel to provide order data
-        // val ordersViewModel = ViewModelProvider(this).get(OrdersViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        // Create dummy data
+        val dummyOrders = listOf(
+            Order(orderId = "1", itemName = "Pizza", quantity = 2, price = 15.99),
+            Order(orderId = "2", itemName = "Burger", quantity = 1, price = 8.99),
+            Order(orderId = "3", itemName = "Pasta", quantity = 3, price = 12.50)
+        )
 
-        // Observe ordersLiveData from ViewModel and submit the list to the adapter
-        // ordersViewModel.ordersLiveData.observe(viewLifecycleOwner) { orders ->
-        //     orderAdapter.submitList(orders)
-        // }
-    }
-
-    override fun onOrderCancelClick(orderItem: Order) {
-        // Handle order cancellation logic here
+        val view = inflater.inflate(R.layout.fragment_orders, container, false)
+        recyclerView = view.findViewById(R.id.recyclerViewOrders)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        orderAdapter = OrderAdapter(dummyOrders)
+        recyclerView.adapter = orderAdapter
+        return view
     }
 }
-

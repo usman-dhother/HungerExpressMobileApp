@@ -1,47 +1,30 @@
 package com.teamd.hungerexpressfooddelivery.ui.myorders
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.teamd.hungerexpressfooddelivery.databinding.OrderItemBinding
 
-class OrderAdapter(private val listener: OnOrderClickListener) :
-    ListAdapter<Order, OrderAdapter.OrderViewHolder>(OrderDiffCallback()) {
-
-    interface OnOrderClickListener {
-        fun onOrderCancelClick(orderItem: Order)
-    }
-
-    inner class OrderViewHolder(private val binding: OrderItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(orderItem: Order) {
-//            binding.orderItem = orderItem
-//            binding.cancelButton.setOnClickListener {
-//                listener.onOrderCancelClick(orderItem)
-//            }
-//            binding.executePendingBindings()
-        }
-    }
+class OrderAdapter(private val orders: List<Order>) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        val binding =
-            OrderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = OrderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return OrderViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
-        holder.bind(getItem(position))
-    }
-}
-
-class OrderDiffCallback : DiffUtil.ItemCallback<Order>() {
-    override fun areItemsTheSame(oldItem: Order, newItem: Order): Boolean {
-        return oldItem.orderId == newItem.orderId
+        val order = orders[position]
+        holder.bind(order)
     }
 
-    override fun areContentsTheSame(oldItem: Order, newItem: Order): Boolean {
-        return oldItem == newItem
+    override fun getItemCount(): Int = orders.size
+
+    class OrderViewHolder(private val binding: OrderItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(order: Order) {
+            binding.tvOrderId.text = "Order ID: ${order.orderId}"
+            binding.tvItemName.text = "Item: ${order.itemName}"
+            binding.tvQuantity.text = "Quantity: ${order.quantity}"
+            binding.tvPrice.text = "Price: $${order.price}"
+        }
     }
 }

@@ -5,42 +5,33 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.teamd.hungerexpressfooddelivery.R
-import com.teamd.hungerexpressfooddelivery.databinding.FragmentCartBinding
+import com.teamd.hungerexpressfooddelivery.ui.cart.MenuItem
 import com.teamd.hungerexpressfooddelivery.utils.AppPreferences
 
-// CartFragment.kt
 class CartFragment : Fragment(R.layout.fragment_cart) {
 
-    private lateinit var binding: FragmentCartBinding
     private lateinit var cartAdapter: CartAdapter
     private lateinit var cartRecyclerView: RecyclerView
-    private lateinit var layoutManager: RecyclerView.LayoutManager
-    private lateinit var adapter: CartAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         cartRecyclerView = view.findViewById(R.id.cartRecyclerView)
-        layoutManager = LinearLayoutManager(requireContext())
-        adapter = CartAdapter { /* Handle item interaction */ }
+        cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        cartRecyclerView.layoutManager = layoutManager
-        cartRecyclerView.adapter = adapter
+        // Sample menu items
+        val menuItems = listOf(
+            MenuItem("Choco Brownie", "Choco brownies are all about chocolate...", 5.99, "In stock", "None"),
+            MenuItem("Cupcakes", "Cupcakes are delightful, single-serving desserts...", 2.99, "In stock", "None"),
+            MenuItem("Italian Pastries", "Italian pastries, known as 'pasticceria'...", 15.99, "In stock", "None")
+        )
 
-
-        binding = FragmentCartBinding.bind(view)
-
-        // Initialize RecyclerView and set up the adapter
         cartAdapter = CartAdapter { cartItem ->
             // Handle interactions with cart items (e.g., remove item)
         }
 
-        binding.cartRecyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = cartAdapter
-        }
+        cartRecyclerView.adapter = cartAdapter
 
-        // Update UI with cart items
         updateCartUI()
     }
 
