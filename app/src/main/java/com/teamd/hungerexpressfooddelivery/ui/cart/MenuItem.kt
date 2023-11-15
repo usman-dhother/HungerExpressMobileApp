@@ -5,6 +5,6 @@ data class MenuItem(
     val description: String,
     val price: Double,
     val availability: String,
-    val allergyInfo: String
-    // Add other fields as needed
+    val allergyInfo: String,
+    var quantity: Int // Added quantity field
 )
