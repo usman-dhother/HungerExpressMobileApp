@@ -29,16 +29,19 @@ class NavActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
         navController = navHostFragment.navController
-        val isAdmin = AppPreferences.userType != "user"
-        if(isAdmin) {
-            binding.bottomNavigationView.menu.findItem(R.id.restaurantFragment)?.isVisible = true
-        } else {
-            binding.bottomNavigationView.menu.findItem(R.id.ordersFragment)?.isVisible = true
-            binding.bottomNavigationView.menu.findItem(R.id.cartFragment)?.isVisible = true
-            binding.bottomNavigationView.menu.findItem(R.id.restaurantFragment)?.isVisible = false
+
+        setupBottomNavigation()
+    }
+
+    private fun setupBottomNavigation() {
+        val isAdmin = AppPreferences.userType == "admin"
+
+        binding.bottomNavigationView.menu.apply {
+            findItem(R.id.restaurantFragment).isVisible = isAdmin
+            findItem(R.id.ordersFragment).isVisible = !isAdmin
+            findItem(R.id.cartFragment).isVisible = !isAdmin
         }
+
         binding.bottomNavigationView.setupWithNavController(navController)
-
-
     }
 }
